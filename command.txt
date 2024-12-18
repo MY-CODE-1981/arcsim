@@ -1,0 +1,20 @@
+libboostのインスールでもしも環境が壊れたとき用にパッケージのバックアップ
+
+パッケージ一覧の取得例
+dpkg --get-selections > packages_before.txt
+dpkg --get-selections > packages_after.txt
+
+xhost +local:root
+sudo timeshift-gtk
+
+
+###
+bin/arcsim simulate conf/sphere.json /home/initial/workspace/arcsim/output/sphere
+bin/arcsim simulate conf/crumple.json /home/initial/workspace/arcsim/output/crumple
+bin/arcsim simulate conf/fold.json /home/initial/workspace/arcsim/output/fold
+bin/arcsim simulate conf/tshirt.json /home/initial/workspace/arcsim/output/tshirt
+bin/arcsim simulate conf/paper-tearing.json /home/initial/workspace/arcsim/output/paper-tearing
+bin/arcsim simulate conf/square.json /home/initial/workspace/arcsim/output/square
+bin/arcsim simulate conf/square-pop.json /home/initial/workspace/arcsim/output/square-pop
+
+bin/arcsim replay /home/initial/workspace/arcsim/output/fold
